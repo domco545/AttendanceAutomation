@@ -1,24 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXTreeTableView?>
-<?import java.net.URL?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TreeTableColumn?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="attendanceautomation.gui.controller.TracherClassOverviewController">
-    <stylesheets>
-        <URL value="@tracherclassoverview.css" />
-    </stylesheets>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="bg" stylesheets="@login.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendanceautomation.gui.controller.TracherClassOverviewController">
    <children>
       <JFXTreeTableView layoutX="349.0" layoutY="22.0" prefHeight="346.0" prefWidth="219.0">
          <columns>
             <TreeTableColumn prefWidth="140.0" text="Column X" />
-            <TreeTableColumn prefWidth="78.0" text="Column X" />
+            <TreeTableColumn prefWidth="78.0" styleClass="second" text="Column X" />
          </columns>
       </JFXTreeTableView>
       <Label layoutX="24.0" layoutY="105.0" text="Class Name" />
-      <ChoiceBox layoutX="24.0" layoutY="131.0" prefWidth="150.0" />
+      <ChoiceBox layoutX="24.0" layoutY="131.0" prefWidth="150.0" styleClass="choice" />
    </children>
 </AnchorPane>

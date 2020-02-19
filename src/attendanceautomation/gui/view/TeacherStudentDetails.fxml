@@ -2,7 +2,6 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTreeTableView?>
-<?import java.net.URL?>
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
@@ -12,12 +11,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="900.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="attendanceautomation.gui.controller.TeacherStudentDetailsController">
-    <stylesheets>
-        <URL value="@teaacherstudentdetails.css" />
-    </stylesheets>
+<AnchorPane prefHeight="500.0" prefWidth="900.0" styleClass="bg" stylesheets="@login.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendanceautomation.gui.controller.TeacherStudentDetailsController">
    <children>
-      <BarChart layoutX="6.0" layoutY="282.0" prefHeight="204.0" prefWidth="360.0">
+      <BarChart layoutX="6.0" layoutY="282.0" prefHeight="204.0" prefWidth="360.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="6.0">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
@@ -25,23 +21,23 @@
           <NumberAxis side="LEFT" />
         </yAxis>
       </BarChart>
-      <Label layoutX="63.0" layoutY="44.0" text="Student Name">
+      <Label layoutX="63.0" layoutY="44.0" text="Student Name" AnchorPane.leftAnchor="63.0" AnchorPane.topAnchor="44.0">
          <font>
             <Font size="34.0" />
          </font>
       </Label>
-      <JFXButton layoutX="94.0" layoutY="238.0" text="Week" />
-      <JFXButton layoutX="33.0" layoutY="238.0" prefWidth="52.0" text="Day" />
-      <JFXButton layoutX="157.0" layoutY="238.0" text="Month" />
-      <JFXButton layoutX="224.0" layoutY="238.0" text="Semester" />
-      <JFXButton layoutX="294.0" layoutY="238.0" text="Total" />
+      <JFXButton layoutX="94.0" layoutY="238.0" text="Week" AnchorPane.leftAnchor="94.0" />
+      <JFXButton layoutX="33.0" layoutY="238.0" prefWidth="52.0" text="Day" AnchorPane.leftAnchor="33.0" />
+      <JFXButton layoutX="157.0" layoutY="238.0" text="Month" AnchorPane.leftAnchor="157.0" />
+      <JFXButton layoutX="224.0" layoutY="238.0" text="Semester" AnchorPane.leftAnchor="224.0" />
+      <JFXButton layoutX="294.0" layoutY="238.0" text="Total" AnchorPane.leftAnchor="294.0" />
       <Label layoutX="71.0" layoutY="206.0" text="Student Name's Attendance for given period" />
-      <JFXTreeTableView layoutX="515.0" layoutY="22.0" prefHeight="193.0" prefWidth="270.0">
+      <JFXTreeTableView layoutX="515.0" layoutY="22.0" prefHeight="193.0" prefWidth="270.0" AnchorPane.rightAnchor="114.60000000000002" AnchorPane.topAnchor="22.0">
          <columns>
             <TreeTableColumn prefWidth="75.0" text="Column X" />
             <TreeTableColumn prefWidth="75.0" text="Column X" />
          </columns>
       </JFXTreeTableView>
-      <PieChart layoutX="521.0" layoutY="252.0" prefHeight="204.0" prefWidth="342.0" />
+      <PieChart layoutX="521.0" layoutY="252.0" prefHeight="204.0" prefWidth="342.0" AnchorPane.bottomAnchor="44.0" AnchorPane.rightAnchor="36.60000000000002" />
    </children>
 </AnchorPane>

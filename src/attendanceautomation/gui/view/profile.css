@@ -25,25 +25,10 @@
     
 }
 
-#d
-{
-    
-    -fx-border-color: #3590D9;
-    -fx-border-width: 2px;
-    -fx-border-radius: 5px;
-}
 
-#l
-{-fx-underline: true; }
+
 .ImageView{
     -fx-border-color: #3590D9;
     -fx-border-width: 2px;
     -fx-border-radius: 5px;
-}
-.first{
-    
-    -fx-background-color: white;
-}
-.second{
-    -fx-background-color: grey;
 }

@@ -5,12 +5,4 @@
 .mainFxmlClass {
 
 }
-#choice
-{
-    -fx-border-color: #3590D9;
-    -fx-border-width: 2px;
-    -fx-border-radius: 5px;
-}
-.second{
-    -fx-background-color: grey;
-}
+

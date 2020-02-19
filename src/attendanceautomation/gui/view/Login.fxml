@@ -9,7 +9,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="300.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendanceautomation.gui.controller.LoginController">
+<AnchorPane prefHeight="300.0" prefWidth="300.0" styleClass="bg" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendanceautomation.gui.controller.LoginController">
     <stylesheets>
         <URL value="@login.css" />
     </stylesheets>
@@ -21,8 +21,8 @@
       </ImageView>
       <JFXTextField fx:id="txtName" layoutX="160.0" layoutY="137.0" prefHeight="25.0" prefWidth="179.0" promptText="User Name" />
       <JFXRadioButton fx:id="radioRemember" layoutX="233.0" layoutY="254.0" text="Remember me" />
-      <JFXButton fx:id="btnLogin" layoutX="160.0" layoutY="216.0" onAction="#actionLogin" style="-fx-background-color: blue;" text="Login" />
+      <JFXButton fx:id="btnLogin" layoutX="160.0" layoutY="216.0" onAction="#actionLogin" text="Login" />
       <JFXPasswordField fx:id="txtPass" layoutX="160.0" layoutY="180.0" prefHeight="25.0" prefWidth="179.0" promptText="Password" />
-      <JFXButton layoutX="233.0" layoutY="216.0" onAction="#actionForgotpass" style="-fx-background-color: blue;" text="Forgot password" />
+      <JFXButton layoutX="233.0" layoutY="216.0" onAction="#actionForgotpass" text="Forgot password" />
    </children>
 </AnchorPane>
