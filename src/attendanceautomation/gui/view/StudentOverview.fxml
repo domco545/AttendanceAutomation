@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <stylesheets>
         <URL value="@studentoverview.css" />
     </stylesheets>
@@ -21,11 +21,11 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
                   <Label layoutX="112.0" layoutY="14.0" prefHeight="26.0" prefWidth="111.0" text="Label" />
-                  <ChoiceBox layoutX="317.0" layoutY="14.0" prefWidth="150.0" />
+                  <ChoiceBox id="choice" layoutX="317.0" layoutY="14.0" prefWidth="150.0" />
                   <JFXTreeTableView layoutX="198.0" layoutY="48.0" prefHeight="205.0" prefWidth="175.0">
                      <columns>
                         <TreeTableColumn prefWidth="75.0" text="Column X" />
-                        <TreeTableColumn prefWidth="75.0" text="Column X" />
+                        <TreeTableColumn prefWidth="75.0" styleClass="second" text="Column X" />
                      </columns>
                   </JFXTreeTableView>
                   <GridPane layoutX="31.0" layoutY="274.0" prefHeight="26.0" prefWidth="538.0">
