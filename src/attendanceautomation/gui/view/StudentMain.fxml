@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import java.net.URL?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="900.0" style="-fx-background-color: #95EAD5;" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="attendanceautomation.gui.view.StudentMainController">
+    <stylesheets>
+        <URL value="@studentmain.css" />
+    </stylesheets>
+   <children>
+      <BorderPane layoutX="200.0" prefHeight="500.0" prefWidth="700.0">
+         <center>
+            <JFXToggleButton text="Subject 1" BorderPane.alignment="CENTER">
+               <graphic>
+                  <JFXToggleButton text="Subject 4">
+                     <graphic>
+                        <JFXToggleButton text="Subject 3">
+                           <graphic>
+                              <JFXToggleButton text="Subject 2" />
+                           </graphic>
+                        </JFXToggleButton>
+                     </graphic>
+                  </JFXToggleButton>
+               </graphic>
+            </JFXToggleButton>
+         </center>
+         <top>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="The Current Date" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="44.0" />
+               </font>
+            </Text>
+         </top>
+         <bottom>
+            <JFXButton text="Confirm" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+      <Pane maxWidth="200.0" prefWidth="200.0" style="-fx-background-color: #95A9A4;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="52.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../../../Downloads/yoda.jpg" />
+               </image>
+            </ImageView>
+            <JFXButton layoutX="63.0" layoutY="211.0" text="Edit Profile" />
+            <JFXButton layoutX="74.0" layoutY="250.0" text="Log out" />
+            <Pane layoutX="9.0" layoutY="154.0" prefHeight="41.0" prefWidth="183.0" style="-fx-background-color: #84C4B4;">
+               <children>
+                  <Text layoutX="76.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" textAlignment="CENTER" />
+                  <Text layoutX="77.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
