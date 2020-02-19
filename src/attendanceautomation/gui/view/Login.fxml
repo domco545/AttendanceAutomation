@@ -21,7 +21,7 @@
       </ImageView>
       <JFXTextField fx:id="txtName" layoutX="189.0" layoutY="138.0" promptText="User Name" />
       <JFXRadioButton fx:id="radioRemember" layoutX="306.0" layoutY="212.0" text="Remember me" />
-      <JFXButton fx:id="btnLogin" layoutX="227.0" layoutY="213.0" onAction="#actionLogin" style="-fx-background-color: blue;" text="Login" />
+      <JFXButton fx:id="btnLogin" layoutX="227.0" layoutY="213.0" onAction="#actionLogin" stylesheets="@login.css" text="Login" />
       <JFXPasswordField fx:id="txtPass" layoutX="189.0" layoutY="179.0" promptText="Password" />
    </children>
 </AnchorPane>
