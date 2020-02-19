@@ -1,0 +1,49 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+
+.mainFxmlClass {
+
+}
+#anchorpane
+{
+   -fx-background-color: #FED2AC;
+
+}
+.button
+{
+    
+    -fx-border-color: #F93636;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    
+}
+.button:hover
+{
+    -fx-background-color: #FF4040;
+    
+}
+
+#d
+{
+    
+    -fx-border-color: #F93636;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+}
+
+#l
+{-fx-underline: true; }
+.ImageView{
+    -fx-border-color: #F93636;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+}
+.first{
+    
+    -fx-background-color: white;
+}
+.second{
+    -fx-background-color: grey;
+}
