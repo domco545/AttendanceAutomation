@@ -124,9 +124,14 @@ public class LoginController implements Initializable {
     
     private void mainWindow(ActionEvent event){
         try{
-            Parent root;
+            Parent root = FXMLLoader.load(getClass().getResource("/attendanceautomation/gui/view/Main.fxml"));
             
-            root = FXMLLoader.load(getClass().getResource("/attendanceautomation/gui/view/Main.fxml"));
+            if(loggedUser.getPermissionGroup() == 1){
+                root = FXMLLoader.load(getClass().getResource("/attendanceautomation/gui/view/StudentMain.fxml"));
+            }else if(loggedUser.getPermissionGroup() == 2){
+                root = FXMLLoader.load(getClass().getResource("/attendanceautomation/gui/view/TeacherStudentDetails.fxml"));
+            }
+            
             Scene scene = new Scene(root);
 
             Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();

@@ -79,4 +79,9 @@ public class User {
     public void setTodayClasses(List<Class> todayClasses) {
         this.todayClasses = todayClasses;
     }
+
+    @Override
+    public String toString() {
+        return "User{" + "id=" + id + ", permissionGroup=" + permissionGroup + '}';
+    }
 }

@@ -23,6 +23,7 @@ public class UserDAOMock {
         for (DB user : users) {
             if (user.getLogin().equals(name) && user.getPass().equals(hashedPass)) {
                 u.setId(user.getId());
+                u.setPermissionGroup(user.getPermissionGroup());
                 return u;
             }
         }
@@ -34,7 +35,15 @@ public class UserDAOMock {
         p.setId(1);
         p.setLogin("login");
         p.setPass("d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1");
+        p.setPermissionGroup(1);
         users.add(p);
+        
+        DB p2 = new DB();
+        p2.setId(2);
+        p2.setLogin("teacher");
+        p2.setPass("d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1");
+        p2.setPermissionGroup(2);
+        users.add(p2);
     }
 }
 
@@ -43,6 +52,7 @@ class DB {
     int id;
     String login;
     String pass;
+    int permissionGroup;
 
     public int getId() {
         return id;
@@ -66,5 +76,13 @@ class DB {
 
     public void setPass(String pass) {
         this.pass = pass;
+    }
+
+    public int getPermissionGroup() {
+        return permissionGroup;
+    }
+
+    public void setPermissionGroup(int permissionGroup) {
+        this.permissionGroup = permissionGroup;
     }
 }
