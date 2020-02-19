@@ -9,19 +9,20 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="500.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendanceautomation.gui.controller.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="300.0" prefWidth="300.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendanceautomation.gui.controller.LoginController">
     <stylesheets>
         <URL value="@login.css" />
     </stylesheets>
    <children>
-      <ImageView fitHeight="99.0" fitWidth="120.0" layoutX="207.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="187.0" AnchorPane.leftAnchor="207.0" AnchorPane.rightAnchor="194.0" AnchorPane.topAnchor="14.0">
+      <ImageView fitHeight="99.0" fitWidth="120.0" layoutX="200.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="187.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="201.0" AnchorPane.topAnchor="14.0">
          <image>
             <Image url="@../../../res/img/easv-logo.png" />
          </image>
       </ImageView>
-      <JFXTextField fx:id="txtName" layoutX="189.0" layoutY="138.0" promptText="User Name" />
-      <JFXRadioButton fx:id="radioRemember" layoutX="306.0" layoutY="212.0" text="Remember me" />
-      <JFXButton fx:id="btnLogin" layoutX="227.0" layoutY="213.0" onAction="#actionLogin" stylesheets="@login.css" text="Login" />
-      <JFXPasswordField fx:id="txtPass" layoutX="189.0" layoutY="179.0" promptText="Password" />
+      <JFXTextField fx:id="txtName" layoutX="160.0" layoutY="137.0" prefHeight="25.0" prefWidth="179.0" promptText="User Name" />
+      <JFXRadioButton fx:id="radioRemember" layoutX="233.0" layoutY="254.0" text="Remember me" />
+      <JFXButton fx:id="btnLogin" layoutX="160.0" layoutY="216.0" onAction="#actionLogin" style="-fx-background-color: blue;" text="Login" />
+      <JFXPasswordField fx:id="txtPass" layoutX="160.0" layoutY="180.0" prefHeight="25.0" prefWidth="179.0" promptText="Password" />
+      <JFXButton layoutX="233.0" layoutY="216.0" onAction="#actionForgotpass" style="-fx-background-color: blue;" text="Forgot password" />
    </children>
 </AnchorPane>

@@ -5,6 +5,7 @@
  */
 package attendanceautomation.dal;
 
+import attendanceautomation.be.User;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,13 +17,16 @@ public class UserDAOMock {
 
     List<DB> users = new ArrayList();
 
-    public int authenticate(String name, String hashedPass) {
+    public User authenticate(String name, String hashedPass) {
+        User u = new User();
+        u.setId(-1);
         for (DB user : users) {
             if (user.getLogin().equals(name) && user.getPass().equals(hashedPass)) {
-                return user.getId();
+                u.setId(user.getId());
+                return u;
             }
         }
-        return -1;
+        return u;
     }
 
     public UserDAOMock() {

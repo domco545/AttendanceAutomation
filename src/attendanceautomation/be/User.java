@@ -21,7 +21,20 @@ public class User {
     private final StringProperty fName = new SimpleStringProperty();
     private final StringProperty lName = new SimpleStringProperty();
     private final IntegerProperty id = new SimpleIntegerProperty();
+    private final IntegerProperty permissionGroup = new SimpleIntegerProperty();
     private List<Class> todayClasses = new ArrayList<>();
+
+    public int getPermissionGroup() {
+        return permissionGroup.get();
+    }
+
+    public void setPermissionGroup(int value) {
+        permissionGroup.set(value);
+    }
+
+    public IntegerProperty permissionGroupProperty() {
+        return permissionGroup;
+    }
 
     public String getlName() {
         return lName.get();
@@ -34,8 +47,7 @@ public class User {
     public StringProperty lNameProperty() {
         return lName;
     }
-    
-    
+
     public String getfName() {
         return fName.get();
     }

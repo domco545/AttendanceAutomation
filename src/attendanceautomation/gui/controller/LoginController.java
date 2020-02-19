@@ -5,20 +5,28 @@
  */
 package attendanceautomation.gui.controller;
 
+import attendanceautomation.AttendanceAutomation;
+import attendanceautomation.be.User;
 import attendanceautomation.bll.BllFacade;
 import attendanceautomation.bll.BllManager;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
+import java.io.IOException;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -28,7 +36,7 @@ import javafx.scene.control.Alert.AlertType;
 public class LoginController implements Initializable {
 
     BllFacade bll = new BllManager();
-    int loggedId;
+    User loggedUser;
 
     @FXML
     private JFXTextField txtName;
@@ -56,9 +64,11 @@ public class LoginController implements Initializable {
         String pass = txtPass.getText();
 
         if (validate(name, pass)) {
-            authenticate(name, pass);
+            if (authenticate(name, pass)) {
+                System.out.println("logged as " + loggedUser);
+                mainWindow(event);
+            }
         }
-        System.out.println("logged as " +loggedId);
     }
 
     private boolean validate(String name, String pass) {
@@ -73,17 +83,19 @@ public class LoginController implements Initializable {
         return true;
     }
 
-    private void authenticate(String name, String pass) {
+    private boolean authenticate(String name, String pass) {
         String hashed = hashPass(pass);
-        loggedId = bll.authenticate(name, hashed);
+        loggedUser = bll.authenticate(name, hashed);
 
-        if (loggedId == -1) {
+        if (loggedUser.getId() == -1) {
             Alert alert = new Alert(AlertType.WARNING);
             alert.setTitle("Login");
             alert.setHeaderText("Wrong name or password");
 
             alert.showAndWait();
+            return false;
         }
+        return true;
     }
 
     private String hashPass(String pass) {
@@ -103,6 +115,26 @@ public class LoginController implements Initializable {
             return hexString.toString();
         } catch (Exception ex) {
             throw new RuntimeException(ex);
+        }
+    }
+
+    @FXML
+    private void actionForgotpass(ActionEvent event) throws IOException {
+    }
+    
+    private void mainWindow(ActionEvent event){
+        try{
+            Parent root;
+            
+            root = FXMLLoader.load(getClass().getResource("/attendanceautomation/gui/view/Main.fxml"));
+            Scene scene = new Scene(root);
+
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch(Exception e){
+            System.out.println(e);
         }
     }
 }

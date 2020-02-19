@@ -5,6 +5,7 @@
  */
 package attendanceautomation;
 
+import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,7 +17,7 @@ import javafx.stage.Stage;
  * @author domin
  */
 public class AttendanceAutomation extends Application {
-    
+            
     @Override
     public void start(Stage stage) throws Exception {
         //Parent root = FXMLLoader.load(getClass().getResource("gui/view/Main.fxml"));
@@ -33,5 +34,4 @@ public class AttendanceAutomation extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
 }
