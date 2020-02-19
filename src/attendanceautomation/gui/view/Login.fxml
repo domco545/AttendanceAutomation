@@ -18,9 +18,9 @@
             <Image url="@../../../res/img/easv-logo.png" />
          </image>
       </ImageView>
-      <JFXTextField layoutX="189.0" layoutY="138.0" promptText="User Name" />
-      <JFXTextField layoutX="188.0" layoutY="176.0" promptText="Password" />
-      <JFXRadioButton layoutX="306.0" layoutY="212.0" text="Remember me" />
-      <JFXButton layoutX="227.0" layoutY="213.0" style="-fx-background-color: blue;" text="Login" />
+      <JFXTextField fx:id="txtName" layoutX="189.0" layoutY="138.0" promptText="User Name" />
+      <JFXTextField fx:id="txtPass" layoutX="188.0" layoutY="176.0" promptText="Password" />
+      <JFXRadioButton fx:id="radioRemember" layoutX="306.0" layoutY="212.0" text="Remember me" />
+      <JFXButton fx:id="btnLogin" layoutX="227.0" layoutY="213.0" onAction="#actionLogin" style="-fx-background-color: blue;" text="Login" />
    </children>
 </AnchorPane>
