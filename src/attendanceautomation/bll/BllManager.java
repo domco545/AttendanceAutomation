@@ -5,6 +5,7 @@
  */
 package attendanceautomation.bll;
 
+import attendanceautomation.be.User;
 import attendanceautomation.dal.UserDAOMock;
 
 /**
@@ -16,7 +17,7 @@ public class BllManager implements BllFacade{
 
 
     @Override
-    public int authenticate(String name, String hashedPass) {
+    public User authenticate(String name, String hashedPass) {
         return user.authenticate(name, hashedPass);
     }
     

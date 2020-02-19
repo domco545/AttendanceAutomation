@@ -5,10 +5,12 @@
  */
 package attendanceautomation.bll;
 
+import attendanceautomation.be.User;
+
 /**
  *
  * @author domin
  */
 public interface BllFacade {
-    public int authenticate(String name, String hashedPass);
+    public User authenticate(String name, String hashedPass);
 }
