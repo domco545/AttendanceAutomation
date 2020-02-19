@@ -13,6 +13,7 @@
 
 # Package Files #
 *.jar
+!jfoenix-9.0.8.jar
 *.war
 *.nar
 *.ear
