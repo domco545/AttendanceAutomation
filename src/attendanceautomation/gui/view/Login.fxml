@@ -15,7 +15,7 @@
    <children>
       <ImageView fitHeight="99.0" fitWidth="120.0" layoutX="207.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="187.0" AnchorPane.leftAnchor="207.0" AnchorPane.rightAnchor="194.0" AnchorPane.topAnchor="14.0">
          <image>
-            <Image url="@../../res/img/easv-logo.png" />
+            <Image url="@../../../res/img/easv-logo.png" />
          </image>
       </ImageView>
       <JFXTextField layoutX="189.0" layoutY="138.0" promptText="User Name" />
