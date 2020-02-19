@@ -8,6 +8,7 @@ package attendanceautomation.gui.controller;
 import attendanceautomation.bll.BllFacade;
 import attendanceautomation.bll.BllManager;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
 import java.net.URL;
@@ -32,7 +33,7 @@ public class LoginController implements Initializable {
     @FXML
     private JFXTextField txtName;
     @FXML
-    private JFXTextField txtPass;
+    private JFXPasswordField txtPass;
     @FXML
     private JFXRadioButton radioRemember;
     @FXML

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import java.net.URL?>
@@ -19,8 +20,8 @@
          </image>
       </ImageView>
       <JFXTextField fx:id="txtName" layoutX="189.0" layoutY="138.0" promptText="User Name" />
-      <JFXTextField fx:id="txtPass" layoutX="188.0" layoutY="176.0" promptText="Password" />
       <JFXRadioButton fx:id="radioRemember" layoutX="306.0" layoutY="212.0" text="Remember me" />
       <JFXButton fx:id="btnLogin" layoutX="227.0" layoutY="213.0" onAction="#actionLogin" style="-fx-background-color: blue;" text="Login" />
+      <JFXPasswordField fx:id="txtPass" layoutX="189.0" layoutY="179.0" promptText="Password" />
    </children>
 </AnchorPane>
