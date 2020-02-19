@@ -6,7 +6,9 @@
 package attendanceautomation.bll;
 
 import attendanceautomation.be.User;
+import attendanceautomation.dal.DataDAOMock;
 import attendanceautomation.dal.UserDAOMock;
+import java.util.Date;
 
 /**
  *
@@ -14,11 +16,17 @@ import attendanceautomation.dal.UserDAOMock;
  */
 public class BllManager implements BllFacade{
     UserDAOMock user = new UserDAOMock();
+    DataDAOMock data = new DataDAOMock();
 
 
     @Override
     public User authenticate(String name, String hashedPass) {
         return user.authenticate(name, hashedPass);
+    }
+
+    @Override
+    public Date getDate() {
+        return data.getDate();
     }
     
 }

@@ -18,7 +18,7 @@
    <children>
       <BorderPane layoutX="200.0" prefHeight="400.0" prefWidth="500.0">
          <top>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="The Current Date" BorderPane.alignment="CENTER">
+            <Text fx:id="lblDate" strokeType="OUTSIDE" strokeWidth="0.0" text="The Current Date" BorderPane.alignment="CENTER">
                <font>
                   <Font size="44.0" />
                </font>
@@ -28,7 +28,7 @@
             </Text>
          </top>
          <bottom>
-            <JFXButton text="Confirm" BorderPane.alignment="CENTER">
+            <JFXButton fx:id="btnConfirm" text="Confirm" BorderPane.alignment="CENTER">
                <BorderPane.margin>
                   <Insets bottom="50.0" />
                </BorderPane.margin>
@@ -62,15 +62,15 @@
          <children>
             <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="52.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../Downloads/yoda.jpg" />
+                  <Image url="@../../../res/img/dummy-350x350.png" />
                </image>
             </ImageView>
-            <JFXButton layoutX="63.0" layoutY="211.0" text="Edit Profile" />
-            <JFXButton layoutX="74.0" layoutY="250.0" text="Log out" />
+            <JFXButton layoutX="63.0" layoutY="211.0" onAction="#actionEditProfile" text="Edit Profile" />
+            <JFXButton layoutX="74.0" layoutY="250.0" onAction="#actionLogout" text="Log out" />
             <Pane layoutX="9.0" layoutY="154.0" prefHeight="41.0" prefWidth="183.0">
                <children>
-                  <Text layoutX="76.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" textAlignment="CENTER" />
-                  <Text layoutX="77.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
+                  <Text fx:id="lblName" layoutX="76.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name" textAlignment="CENTER" />
+                  <Text fx:id="lblEmail" layoutX="77.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
                </children>
             </Pane>
          </children>

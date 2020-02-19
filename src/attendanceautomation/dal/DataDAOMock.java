@@ -3,16 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package attendanceautomation.bll;
+package attendanceautomation.dal;
 
-import attendanceautomation.be.User;
 import java.util.Date;
 
 /**
  *
  * @author domin
  */
-public interface BllFacade {
-    public User authenticate(String name, String hashedPass);
-    public Date getDate();
+public class DataDAOMock {
+
+    public Date getDate() {
+        java.sql.Date date = java.sql.Date.valueOf("2020-02-14");
+        Date d = new Date(date.getTime());
+        return d;
+    }
+    
 }

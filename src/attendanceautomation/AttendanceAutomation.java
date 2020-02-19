@@ -24,6 +24,7 @@ public class AttendanceAutomation extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("gui/view/Login.fxml"));
         Scene scene = new Scene(root);
         
+        stage.setTitle("AttendanceAutomation");
         stage.setScene(scene);
         stage.show();
     }
