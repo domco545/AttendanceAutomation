@@ -129,7 +129,7 @@ public class LoginController implements Initializable {
             if(loggedUser.getPermissionGroup() == 1){
                 root = FXMLLoader.load(getClass().getResource("/attendanceautomation/gui/view/StudentMain.fxml"));
             }else if(loggedUser.getPermissionGroup() == 2){
-                root = FXMLLoader.load(getClass().getResource("/attendanceautomation/gui/view/TeacherStudentDetails.fxml"));
+                root = FXMLLoader.load(getClass().getResource("/attendanceautomation/gui/view/TeacherMain.fxml"));
             }
             
             Scene scene = new Scene(root);

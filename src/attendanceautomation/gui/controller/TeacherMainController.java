@@ -7,6 +7,8 @@ package attendanceautomation.gui.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 /**
@@ -14,7 +16,7 @@ import javafx.fxml.Initializable;
  *
  * @author narma
  */
-public class ProfileController implements Initializable {
+public class TeacherMainController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -23,5 +25,9 @@ public class ProfileController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    @FXML
+    private void actionLogout(ActionEvent event) {
+    }
     
 }

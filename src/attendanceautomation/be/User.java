@@ -18,12 +18,26 @@ import javafx.beans.property.StringProperty;
  */
 public class User {
 
+    private List<Class> todayClasses = new ArrayList<>();
     private final StringProperty fName = new SimpleStringProperty();
     private final StringProperty lName = new SimpleStringProperty();
+    private final StringProperty email = new SimpleStringProperty();
     private final IntegerProperty id = new SimpleIntegerProperty();
     private final IntegerProperty permissionGroup = new SimpleIntegerProperty();
-    private List<Class> todayClasses = new ArrayList<>();
 
+    public String getEmail() {
+        return email.get();
+    }
+
+    public void setEmail(String value) {
+        email.set(value);
+    }
+
+    public StringProperty emailProperty() {
+        return email;
+    }
+    
+    
     public int getPermissionGroup() {
         return permissionGroup.get();
     }
