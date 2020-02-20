@@ -34,7 +34,7 @@
             <Label layoutX="66.0" layoutY="184.0" text="Email" />
             <Label layoutX="67.0" layoutY="201.0" text="Name" />
             <JFXButton fx:id="classOverId" layoutX="31.0" layoutY="240.0" onAction="#OverviewButton" prefHeight="29.0" prefWidth="103.0" text="Class Overview" />
-            <JFXButton layoutX="32.0" layoutY="430.0" onAction="#actionLogout" prefHeight="26.0" prefWidth="92.0" text="Log out" />
+            <JFXButton fx:id="logoutId" layoutX="32.0" layoutY="430.0" onAction="#actionLogout" prefHeight="26.0" prefWidth="92.0" text="Log out" />
          </children>
       </Pane>
    </children>

@@ -23,14 +23,12 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author narma
+ * @author saraf
  */
-public class TeacherMainController implements Initializable {
+public class TeacherClassOverviewController implements Initializable {
 
     @FXML
-    private JFXButton classOverId;
-    @FXML
-    private JFXButton logoutId;
+    private JFXButton backButton;
 
     /**
      * Initializes the controller class.
@@ -41,32 +39,17 @@ public class TeacherMainController implements Initializable {
     }    
 
     @FXML
-    private void actionLogout(ActionEvent event) {
+    private void backButtonAction(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/attendanceautomation/gui/view/Login.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/attendanceautomation/gui/view/TeacherMain.fxml"));
             
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.show();
         } catch (IOException ex) {
-            Logger.getLogger(TeacherMainController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TeacherClassOverviewController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
-    @FXML
-    private void OverviewButton(ActionEvent event) {
-        {
-            try {
-                Parent root = FXMLLoader.load(getClass().getResource("/attendanceautomation/gui/view/TeacherClassOverview.fxml"));
-                
-                Scene scene = new Scene(root);
-                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                stage.setScene(scene);
-                stage.show();
-            } catch (IOException ex) {
-                Logger.getLogger(TeacherMainController.class.getName()).log(Level.SEVERE, null, ex);
-            }
-    }
     
-}}
+}

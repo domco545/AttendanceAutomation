@@ -73,7 +73,7 @@ public class StudentMainController implements Initializable {
 
 
     @FXML
-    private void etudentEditProfileButton(ActionEvent event) {
+    private void studentEditProfileButton(ActionEvent event) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/attendanceautomation/gui/view/studentEditProfile.fxml"));
             
