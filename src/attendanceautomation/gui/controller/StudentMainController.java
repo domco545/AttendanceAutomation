@@ -8,11 +8,14 @@ package attendanceautomation.gui.controller;
 import attendanceautomation.bll.BllFacade;
 import attendanceautomation.bll.BllManager;
 import com.jfoenix.controls.JFXButton;
+import java.io.IOException;
 import java.net.URL;
 import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -40,6 +43,8 @@ public class StudentMainController implements Initializable {
     private Text lblName;
     @FXML
     private Text lblEmail;
+    @FXML
+    private JFXButton editProfileId;
 
     /**
      * Initializes the controller class.
@@ -51,9 +56,6 @@ public class StudentMainController implements Initializable {
         lblDate.setText(formatter.format(d));
     }
 
-    @FXML
-    private void actionEditProfile(ActionEvent event) {
-    }
 
     @FXML
     private void actionLogout(ActionEvent event) {
@@ -66,6 +68,21 @@ public class StudentMainController implements Initializable {
             stage.show();
         } catch (Exception e) {
             System.out.println(e);
+        }
+    }
+
+
+    @FXML
+    private void etudentEditProfileButton(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/attendanceautomation/gui/view/studentEditProfile.fxml"));
+            
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(StudentMainController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

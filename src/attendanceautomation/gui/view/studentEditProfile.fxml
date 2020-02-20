@@ -21,7 +21,7 @@
                </image>
             </ImageView>
             <JFXButton layoutX="69.0" layoutY="211.0" text="Change" />
-            <JFXButton layoutX="77.0" layoutY="390.0" text="Back" />
+            <JFXButton fx:id="backButtonId" layoutX="77.0" layoutY="390.0" onAction="#backButton" text="Back" />
          </children>
       </Pane>
    </children>
