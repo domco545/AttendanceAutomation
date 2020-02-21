@@ -45,6 +45,8 @@ public class StudentMainController implements Initializable {
     private Text lblEmail;
     @FXML
     private JFXButton editProfileId;
+    @FXML
+    private JFXButton studentOverviewBtn;
 
     /**
      * Initializes the controller class.
@@ -76,6 +78,20 @@ public class StudentMainController implements Initializable {
     private void studentEditProfileButton(ActionEvent event) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/attendanceautomation/gui/view/studentEditProfile.fxml"));
+            
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(StudentMainController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    @FXML
+    private void goToOverview(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/attendanceautomation/gui/view/StudentOverview.fxml"));
             
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
