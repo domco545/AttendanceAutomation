@@ -80,7 +80,11 @@ public class StudentMainController implements Initializable {
     @FXML
     private void studentEditProfileButton(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/attendanceautomation/gui/view/studentEditProfile.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceautomation/gui/view/studentEditProfile.fxml"));
+            Parent root = loader.load();
+            
+            StudentEditProfileController sepc = loader.getController();
+            sepc.setUser(loggedInUser);
             
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -94,7 +98,11 @@ public class StudentMainController implements Initializable {
     @FXML
     private void goToOverview(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/attendanceautomation/gui/view/StudentOverview.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceautomation/gui/view/StudentOverview.fxml"));
+            Parent root = loader.load();
+            
+            StudentOverviewController soc = loader.getController();
+            soc.setUser(loggedInUser);
             
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

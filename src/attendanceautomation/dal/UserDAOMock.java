@@ -37,7 +37,7 @@ public class UserDAOMock {
         DB p = new DB();
         p.setId(1);
         p.setLogin("login");
-        p.setPass("d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1");
+        p.setPass("d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1"); //pass
         p.setPermissionGroup(1);
         p.setfName("Piotr");
         p.setlName("Stogrovsky");
@@ -47,7 +47,7 @@ public class UserDAOMock {
         DB p2 = new DB();
         p2.setId(2);
         p2.setLogin("teacher");
-        p2.setPass("d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1");
+        p2.setPass("d74ff0ee8da3b9806b18c877dbf29bbde50b5bd8e4dad7a3a725000feb82e8f1"); //pass
         p2.setPermissionGroup(2);
         p2.setfName("Jappa");
         p2.setlName("Lids");

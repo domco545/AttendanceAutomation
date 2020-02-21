@@ -5,6 +5,7 @@
  */
 package attendanceautomation.gui.controller;
 
+import attendanceautomation.be.User;
 import attendanceautomation.gui.controller.StudentMainController;
 import java.io.IOException;
 import java.net.URL;
@@ -33,24 +34,23 @@ import javax.swing.JMenuItem;
  * @author narma
  */
 public class StudentOverviewController implements Initializable {
+    
+    private User loggedInUser = new User();
 
     @FXML
     private SplitMenuButton classesdropdown;
     @FXML
     private SplitMenuButton periodsdropdown;
 
-    
-   
-     private MenuItem weeks = new MenuItem("weeks");
-      private MenuItem months = new MenuItem("months");
-       private MenuItem semesters = new MenuItem("semesters");
-       
-       private MenuItem class1 = new MenuItem("SCO");
-       private MenuItem class2 = new MenuItem("SDE");
-       private MenuItem class3 = new MenuItem("ITO");
-       private MenuItem class4 = new MenuItem("DBOS");
-       
-    
+    private MenuItem weeks = new MenuItem("weeks");
+    private MenuItem months = new MenuItem("months");
+    private MenuItem semesters = new MenuItem("semesters");
+
+    private MenuItem class1 = new MenuItem("SCO");
+    private MenuItem class2 = new MenuItem("SDE");
+    private MenuItem class3 = new MenuItem("ITO");
+    private MenuItem class4 = new MenuItem("DBOS");
+
     /**
      * Initializes the controller class.
      */
@@ -63,8 +63,7 @@ public class StudentOverviewController implements Initializable {
         ObservableList<MenuItem> obsperiods = FXCollections.observableArrayList();
         obsperiods.setAll(periods);
         periodsdropdown.getItems().setAll(obsperiods);
-        
-        
+
         List<MenuItem> subjects = new ArrayList();
         subjects.add(class1);
         subjects.add(class2);
@@ -73,13 +72,17 @@ public class StudentOverviewController implements Initializable {
         ObservableList<MenuItem> obssubjects = FXCollections.observableArrayList();
         obssubjects.setAll(subjects);
         classesdropdown.getItems().setAll(obssubjects);
-        
-    }    
+
+    }
 
     @FXML
     private void goBack(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/attendanceautomation/gui/view/StudentMain.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceautomation/gui/view/StudentMain.fxml"));
+            Parent root = loader.load();
+            
+            StudentMainController smc = loader.getController();
+            smc.setUser(loggedInUser);
             
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -92,9 +95,9 @@ public class StudentOverviewController implements Initializable {
 
     @FXML
     private void goToLogin(ActionEvent event) {
-         try {
+        try {
             Parent root = FXMLLoader.load(getClass().getResource("/attendanceautomation/gui/view/Login.fxml"));
-            
+
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -112,4 +115,7 @@ public class StudentOverviewController implements Initializable {
     private void next(ActionEvent event) {
     }
     
+    public void setUser(User user){
+        this.loggedInUser = user;
+    }
 }

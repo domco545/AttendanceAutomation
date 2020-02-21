@@ -5,6 +5,7 @@
  */
 package attendanceautomation.gui.controller;
 
+import attendanceautomation.be.User;
 import com.jfoenix.controls.JFXButton;
 import java.io.IOException;
 import java.net.URL;
@@ -27,8 +28,11 @@ import javafx.stage.Stage;
  */
 public class StudentEditProfileController implements Initializable {
 
+    private User loggedInUser = new User();
+    
     @FXML
     private JFXButton backButtonId;
+    
 
     /**
      * Initializes the controller class.
@@ -42,7 +46,11 @@ public class StudentEditProfileController implements Initializable {
     private void backButton(ActionEvent event) {
         {
             try {
-                Parent root = FXMLLoader.load(getClass().getResource("/attendanceautomation/gui/view/StudentMain.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceautomation/gui/view/StudentMain.fxml"));
+                Parent root = loader.load();
+                
+                StudentMainController smc = loader.getController();
+                smc.setUser(loggedInUser);
                 
                 Scene scene = new Scene(root);
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -55,4 +63,7 @@ public class StudentEditProfileController implements Initializable {
                 
     }
     
+    public void setUser(User user){
+        this.loggedInUser = user;
+    }
 }
