@@ -41,9 +41,15 @@ public class StudentOverviewController implements Initializable {
 
     
    
-     private MenuItem weeks;
-      private MenuItem months;
-       private MenuItem semesters;
+     private MenuItem weeks = new MenuItem("weeks");
+      private MenuItem months = new MenuItem("months");
+       private MenuItem semesters = new MenuItem("semesters");
+       
+       private MenuItem class1 = new MenuItem("SCO");
+       private MenuItem class2 = new MenuItem("SDE");
+       private MenuItem class3 = new MenuItem("ITO");
+       private MenuItem class4 = new MenuItem("DBOS");
+       
     
     /**
      * Initializes the controller class.
@@ -57,6 +63,17 @@ public class StudentOverviewController implements Initializable {
         ObservableList<MenuItem> obsperiods = FXCollections.observableArrayList();
         obsperiods.setAll(periods);
         periodsdropdown.getItems().setAll(obsperiods);
+        
+        
+        List<MenuItem> subjects = new ArrayList();
+        subjects.add(class1);
+        subjects.add(class2);
+        subjects.add(class3);
+        subjects.add(class4);
+        ObservableList<MenuItem> obssubjects = FXCollections.observableArrayList();
+        obssubjects.setAll(subjects);
+        classesdropdown.getItems().setAll(obssubjects);
+        
     }    
 
     @FXML
