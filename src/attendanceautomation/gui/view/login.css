@@ -12,6 +12,7 @@
     -fx-border-color: #1678C6;
     -fx-border-width: 2px;
     -fx-border-radius: 5px;
+    
 }
 .side{
   
@@ -22,6 +23,8 @@
     -fx-background-color: #2588D7;
     -fx-transition: width 1s;
     -fx-font-size: 12.5;
+    
+    
 }
 #d
 {
@@ -49,6 +52,12 @@
     -fx-border-radius: 5px;
 }
 
+#confirm:hover
+{
+    -fx-background-color: #2588D7;
+    -fx-transition: width 1s;
+    -fx-font-size: 29;
+}
 
 
 

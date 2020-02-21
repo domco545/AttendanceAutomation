@@ -23,7 +23,7 @@
       </JFXTreeTableView>
       <JFXButton layoutX="229.0" layoutY="440.0" prefHeight="26.0" prefWidth="92.0" text="Detail" AnchorPane.bottomAnchor="14.0" />
       <Label id="l" layoutX="247.0" layoutY="60.0" text="Current Date" AnchorPane.leftAnchor="247.0" />
-      <SplitMenuButton id="d" layoutX="242.0" layoutY="227.0" mnemonicParsing="false" text="Classes">
+      <SplitMenuButton id="d" fx:id="classesdropdown" layoutX="242.0" layoutY="227.0" mnemonicParsing="false" text="Classes">
         <items>
           <MenuItem mnemonicParsing="false" text="Action 1" />
           <MenuItem mnemonicParsing="false" text="Action 2" />
