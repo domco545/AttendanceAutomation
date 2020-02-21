@@ -138,6 +138,8 @@ public class LoginController implements Initializable {
             }else if(loggedUser.getPermissionGroup() == 2){
                 loader = new FXMLLoader(getClass().getResource("/attendanceautomation/gui/view/TeacherMain.fxml"));
                 root = loader.load();
+                TeacherMainController tmc = loader.getController();
+                tmc.setUser(loggedUser);
             }
             
             Scene scene = new Scene(root);
