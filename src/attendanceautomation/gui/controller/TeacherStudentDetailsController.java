@@ -5,6 +5,7 @@
  */
 package attendanceautomation.gui.controller;
 
+import attendanceautomation.be.User;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -15,6 +16,9 @@ import javafx.fxml.Initializable;
  * @author saraf
  */
 public class TeacherStudentDetailsController implements Initializable {
+    
+    private User loggedInUser = new User();
+    private User student = new User();
 
     /**
      * Initializes the controller class.
@@ -22,6 +26,10 @@ public class TeacherStudentDetailsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }   
     
+    public void setUser(User user, User student){
+        this.loggedInUser = user;
+        this.student = student;
+    }
 }

@@ -7,6 +7,7 @@ package attendanceautomation.gui.controller;
 
 import attendanceautomation.be.User;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTreeTableView;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -26,6 +27,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.SplitMenuButton;
+import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 /**
@@ -49,6 +51,8 @@ public class TeacherMainController implements Initializable {
     private Label lblEmail;
     @FXML
     private Label lblName;
+    @FXML
+    private TableView<User> tableview;
 
     /**
      * Initializes the controller class.
@@ -82,7 +86,11 @@ public class TeacherMainController implements Initializable {
     private void OverviewButton(ActionEvent event) {
         {
             try {
-                Parent root = FXMLLoader.load(getClass().getResource("/attendanceautomation/gui/view/TeacherClassOverview.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceautomation/gui/view/TeacherClassOverview.fxml"));
+                Parent root = loader.load();
+
+                TeacherClassOverviewController tco = loader.getController();
+                tco.setUser(loggedInUser);
 
                 Scene scene = new Scene(root);
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -94,10 +102,23 @@ public class TeacherMainController implements Initializable {
         }
 
     }
-    
-    public void setUser(User user){
+
+    public void setUser(User user) {
         this.loggedInUser = user;
         lblName.setText(loggedInUser.getFullName());
         lblEmail.setText(loggedInUser.getEmail());
+    }
+
+    @FXML
+    private void actionStudentDetail(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/attendanceautomation/gui/view/TeacherStudentDetails.fxml"));
+            Parent root = loader.load();
+
+            TeacherStudentDetailsController tsdc = loader.getController();
+            tsdc.setUser(loggedInUser, tableview.getSelectionModel().getSelectedItem());
+        } catch (IOException ex) {
+            Logger.getLogger(TeacherMainController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }
