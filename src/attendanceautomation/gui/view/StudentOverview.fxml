@@ -10,7 +10,6 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="bg" stylesheets="@login.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendanceautomation.gui.view.StudentOverviewController">
    <children>
       <JFXTreeTableView layoutX="287.0" layoutY="33.0" prefHeight="332.0" prefWidth="226.0" AnchorPane.bottomAnchor="35.0" AnchorPane.rightAnchor="87.0">
@@ -20,7 +19,7 @@
             <TreeTableColumn prefWidth="75.0" text="\%" />
          </columns>
       </JFXTreeTableView>
-      <GridPane layoutX="37.0" layoutY="33.0">
+      <GridPane layoutX="37.0" layoutY="33.0" AnchorPane.leftAnchor="37.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
         </columnConstraints>
@@ -31,25 +30,13 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <SplitMenuButton id="choice" mnemonicParsing="false" text="Classes">
+            <SplitMenuButton id="choice" fx:id="classesdropdown" mnemonicParsing="false" text="Classes">
               <items>
                 <MenuItem mnemonicParsing="false" text="Action 1" />
                 <MenuItem mnemonicParsing="false" text="Action 2" />
               </items>
             </SplitMenuButton>
-            <SplitMenuButton id="choice" mnemonicParsing="false" text="Weeks" GridPane.rowIndex="1">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
-              </items>
-            </SplitMenuButton>
-            <SplitMenuButton id="choice" mnemonicParsing="false" text="Months" GridPane.rowIndex="2">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-                <MenuItem mnemonicParsing="false" text="Action 2" />
-              </items>
-            </SplitMenuButton>
-            <SplitMenuButton id="choice" mnemonicParsing="false" text="Semesters" GridPane.rowIndex="3">
+            <SplitMenuButton id="choice" fx:id="periodsdropdown" mnemonicParsing="false" text="All" GridPane.rowIndex="1">
               <items>
                 <MenuItem mnemonicParsing="false" text="Action 1" />
                 <MenuItem mnemonicParsing="false" text="Action 2" />
@@ -57,7 +44,9 @@
             </SplitMenuButton>
          </children>
       </GridPane>
-      <JFXButton layoutX="29.0" layoutY="340.0" onAction="#goToLogin" text="Log out" />
-      <JFXButton layoutX="94.0" layoutY="340.0" onAction="#goBack" text="Back" />
+      <JFXButton layoutX="29.0" layoutY="340.0" onAction="#goToLogin" text="Log out" AnchorPane.bottomAnchor="30.4" AnchorPane.leftAnchor="29.0" />
+      <JFXButton layoutX="94.0" layoutY="340.0" onAction="#goBack" text="Back" AnchorPane.bottomAnchor="30.4" AnchorPane.leftAnchor="94.0" />
+      <JFXButton layoutX="258.0" layoutY="187.0" onAction="#previous" text="&lt;" />
+      <JFXButton layoutX="513.0" layoutY="187.0" onAction="#next" text="&gt;" />
    </children>
 </AnchorPane>
