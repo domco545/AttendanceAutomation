@@ -48,5 +48,19 @@ public class StudentOverviewController implements Initializable {
             Logger.getLogger(StudentMainController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    @FXML
+    private void goToLogin(ActionEvent event) {
+         try {
+            Parent root = FXMLLoader.load(getClass().getResource("/attendanceautomation/gui/view/Login.fxml"));
+            
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(StudentMainController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
 }
