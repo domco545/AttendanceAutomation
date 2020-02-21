@@ -17,6 +17,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,6 +28,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 /**
@@ -124,12 +127,17 @@ public class LoginController implements Initializable {
     
     private void mainWindow(ActionEvent event){
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("/attendanceautomation/gui/view/Main.fxml"));
+            FXMLLoader loader= new FXMLLoader(getClass().getResource("/attendanceautomation/gui/view/Main.fxml"));
+            Parent root = loader.load();
             
             if(loggedUser.getPermissionGroup() == 1){
-                root = FXMLLoader.load(getClass().getResource("/attendanceautomation/gui/view/StudentMain.fxml"));
+                loader = new FXMLLoader(getClass().getResource("/attendanceautomation/gui/view/StudentMain.fxml"));
+                root=loader.load();
+                StudentMainController smc = loader.getController();
+                smc.setUser(loggedUser);
             }else if(loggedUser.getPermissionGroup() == 2){
-                root = FXMLLoader.load(getClass().getResource("/attendanceautomation/gui/view/TeacherMain.fxml"));
+                loader = new FXMLLoader(getClass().getResource("/attendanceautomation/gui/view/TeacherMain.fxml"));
+                root = loader.load();
             }
             
             Scene scene = new Scene(root);
@@ -137,9 +145,8 @@ public class LoginController implements Initializable {
             Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.show();
-        }
-        catch(Exception e){
-            System.out.println(e);
+        } catch (IOException ex) {
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

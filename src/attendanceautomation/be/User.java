@@ -93,9 +93,13 @@ public class User {
     public void setTodayClasses(List<Class> todayClasses) {
         this.todayClasses = todayClasses;
     }
+    
+    public String getFullName(){
+        return fName.get() + " " + lName.get();
+    }
 
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", permissionGroup=" + permissionGroup + '}';
+        return "User{" + "id=" + id + ", permissionGroup=" + permissionGroup + "name=" + fName +'}';
     }
 }

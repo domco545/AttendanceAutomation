@@ -14,8 +14,10 @@ import java.util.Date;
 public class DataDAOMock {
 
     public Date getDate() {
-        java.sql.Date date = java.sql.Date.valueOf("2020-02-14");
-        Date d = new Date(date.getTime());
+        //java.sql.Date date = java.sql.Date.valueOf("2020-02-14");
+        //Date d = new Date(date.getTime());
+        Date d = new Date();
+        d.getTime();
         return d;
     }
     

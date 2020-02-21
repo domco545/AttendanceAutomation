@@ -5,6 +5,7 @@
  */
 package attendanceautomation.gui.controller;
 
+import attendanceautomation.be.User;
 import attendanceautomation.bll.BllFacade;
 import attendanceautomation.bll.BllManager;
 import com.jfoenix.controls.JFXButton;
@@ -23,6 +24,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -34,15 +36,16 @@ import javafx.stage.Stage;
 public class StudentMainController implements Initializable {
 
     BllFacade bll = new BllManager();
-
+    private User loggedInUser = new User();
+    
     @FXML
     private Text lblDate;
     @FXML
     private JFXButton btnConfirm;
     @FXML
-    private Text lblName;
+    private Label lblName;
     @FXML
-    private Text lblEmail;
+    private Label lblEmail;
     @FXML
     private JFXButton editProfileId;
     @FXML
@@ -101,5 +104,11 @@ public class StudentMainController implements Initializable {
             Logger.getLogger(StudentMainController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    
+    public void setUser(User user){
+        this.loggedInUser = user;
+        System.out.println(user.getFullName());
+        lblName.setText(loggedInUser.getFullName());
+        lblEmail.setText(loggedInUser.getEmail());
+    }
 }
